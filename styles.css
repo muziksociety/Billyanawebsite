@@ -1,0 +1,161 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Header styling (applies to both index and musica pages) */
+header {
+    background-color: #000;
+    padding: 20px 0;
+    position: relative;
+}
+
+/* Restore the Desktop Menu styling */
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Hamburger menu for mobile */
+.hamburger {
+    display: none;  /* Hidden on desktop */
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Full-Screen Overlay Menu */
+.overlay-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.overlay-menu-list {
+    list-style: none;
+    padding: 0;
+}
+
+.overlay-menu-list li {
+    margin: 20px 0;
+}
+
+.overlay-menu-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;  /* Visible on mobile */
+    }
+
+    /* Hide the regular menu on mobile */
+    .menu {
+        display: none;
+    }
+}
+
+/* Background Images Styling for Index and Musica Pages */
+.index-background-images img,
+.background-images img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+/* Grayscale settings for background images */
+.background-images img:nth-child(1),
+.index-background-images img:nth-child(1) {
+    filter: grayscale(0%);
+}
+
+.background-images img:nth-child(2),
+.index-background-images img:nth-child(2) {
+    filter: grayscale(75%);
+}
+
+.background-images img:nth-child(3),
+.index-background-images img:nth-child(3) {
+    filter: grayscale(100%);
+}
+
+/* Footer styling */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    position: relative;
+}
+
+/* Floating Widget */
+#floating-widget {
+    position: absolute;
+    width: 600px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 8px;
+    z-index: 1000;
+    cursor: move;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 120px;
+    left: calc(50% - 300px);
+}
+
+#floating-widget img {
+    width: 90px;
+    height: auto;
+}
+
+#floating-widget a:nth-child(2) img {
+    filter: invert(1);
+}

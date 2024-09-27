@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Billyana Music - Musica</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="musica-page">
+    <!-- Header -->
+    <header>
+        <nav>
+            <!-- Hamburger menu for mobile -->
+            <button id="menu-toggle" class="hamburger">&#9776;</button>
+            <!-- Regular menu (hidden on mobile) -->
+            <ul class="menu">
+                <li><a href="index.html">Principal</a></li>
+                <li><a href="musica.html">Musica</a></li>
+                <li><a href="#">Videos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Full-Screen Overlay Menu (hidden by default) -->
+    <div id="overlay-menu" class="overlay-menu">
+        <button id="close-menu" class="close-button">&times;</button>
+        <ul class="overlay-menu-list">
+            <li><a href="index.html">Principal</a></li>
+            <li><a href="musica.html">Musica</a></li>
+            <li><a href="#">Videos</a></li>
+        </ul>
+    </div>
+
+    <!-- Background Images Section -->
+    <section class="background-images">
+        <img src="Photos/11.jpg" alt="Image 11">
+        <img src="Photos/11.jpg" alt="Image 11">
+        <img src="Photos/11.jpg" alt="Image 11">
+    </section>
+
+    <!-- Draggable Floating Widget -->
+    <div id="floating-widget">
+        <a href="https://open.spotify.com/track/2Y7MnkjKTNg3DLTe9TgqyQ?si=5d0b9196fbec4c20" target="_blank">
+            <img src="logos/spotify-logo.png" alt="Spotify">
+        </a>
+        <a href="https://music.apple.com/us/album/pay-no-mind/1733266595?i=1733266909" target="_blank">
+            <img src="logos/apple-music-logo.png" alt="Apple Music">
+        </a>
+        <a href="https://www.youtube.com/watch?v=mTyFT5TQbQM" target="_blank">
+            <img src="logos/youtube-logo.png" alt="YouTube">
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Billyana Music</p>
+    </footer>
+
+    <script>
+        // Make the floating widget draggable
+        const widget = document.getElementById('floating-widget');
+        let isDragging = false;
+        let offsetX = 0;
+        let offsetY = 0;
+
+        widget.addEventListener('mousedown', function (e) {
+            isDragging = true;
+            offsetX = e.offsetX;
+            offsetY = e.offsetY;
+        });
+
+        document.addEventListener('mousemove', function (e) {
+            if (isDragging) {
+                widget.style.left = `${e.pageX - offsetX}px`;
+                widget.style.top = `${e.pageY - offsetY}px`;
+            }
+        });
+
+        document.addEventListener('mouseup', function () {
+            isDragging = false;
+        });
+
+        // Full-Screen Overlay menu functionality
+        const menuToggle = document.getElementById('menu-toggle');
+        const overlayMenu = document.getElementById('overlay-menu');
+        const closeMenu = document.getElementById('close-menu');
+
+        // Open the overlay
+        menuToggle.addEventListener('click', function () {
+            overlayMenu.style.display = 'block';
+        });
+
+        // Close the overlay
+        closeMenu.addEventListener('click', function () {
+            overlayMenu.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

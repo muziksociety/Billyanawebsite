@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Billyana Music - Index</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <!-- Hamburger menu for mobile -->
+            <button id="menu-toggle" class="hamburger">&#9776;</button>
+            <!-- Regular menu (hidden on mobile) -->
+            <ul class="menu">
+                <li><a href="#">Principal</a></li>
+                <li><a href="musica.html">Musica</a></li>
+                <li><a href="#">Videos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Full-Screen Overlay Menu (hidden by default) -->
+    <div id="overlay-menu" class="overlay-menu">
+        <button id="close-menu" class="close-button">&times;</button>
+        <ul class="overlay-menu-list">
+            <li><a href="#">Principal</a></li>
+            <li><a href="musica.html">Musica</a></li>
+            <li><a href="#">Videos</a></li>
+        </ul>
+    </div>
+
+    <!-- Background Images Section -->
+    <section class="index-background-images">
+        <img src="Photos/1.jpg" alt="Image 1">
+        <img src="Photos/2.jpg" alt="Image 2">
+        <img src="Photos/3.jpg" alt="Image 3">
+        <img src="Photos/4.jpg" alt="Image 4">
+        <img src="Photos/5.jpg" alt="Image 5">
+        <img src="Photos/9.jpg" alt="Image 9">
+        <img src="Photos/10.jpg" alt="Image 10">
+        <img src="Photos/6.jpg" alt="Image 6">
+        <img src="Photos/7.jpg" alt="Image 7">
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Billyana Music</p>
+    </footer>
+
+    <!-- JavaScript to handle the menu functionality -->
+    <script>
+        // Full-Screen Overlay menu functionality
+        const menuToggle = document.getElementById('menu-toggle');
+        const overlayMenu = document.getElementById('overlay-menu');
+        const closeMenu = document.getElementById('close-menu');
+
+        // Open the overlay
+        menuToggle.addEventListener('click', function () {
+            overlayMenu.style.display = 'block';
+        });
+
+        // Close the overlay
+        closeMenu.addEventListener('click', function () {
+            overlayMenu.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
